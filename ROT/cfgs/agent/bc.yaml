@@ -1,0 +1,14 @@
+# @package agent
+_target_: agent.bc.BCAgent
+obs_shape: ??? # to be specified later
+action_shape: ??? # to be specified later
+device: ${device}
+lr: 1e-4
+use_tb: ${use_tb}
+hidden_dim: ${suite.hidden_dim}
+feature_dim: 50
+stddev_schedule: 0.1
+stddev_clip: 0.3
+augment: True
+suite_name: ${suite.name}
+obs_type: ${obs_type}

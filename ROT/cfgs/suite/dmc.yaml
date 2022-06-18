@@ -1,0 +1,31 @@
+# @package suite
+defaults:
+  - _self_
+  - dmc_task@_global_: walker_run
+
+suite: dmc
+
+name: 'dmc'
+
+# task settings
+frame_stack: 3
+action_repeat: 2
+discount: 0.99
+hidden_dim: 1024
+
+# train settings
+num_train_frames: 2100000
+num_seed_frames: 12000
+# eval
+eval_every_frames: 20000
+num_eval_episodes: 10
+
+# snapshot
+save_snapshot: true
+
+task_make_fn:
+  _target_: suite.dmc.make
+  name: ${task_name}
+  frame_stack: ${suite.frame_stack}
+  action_repeat: ${suite.action_repeat}
+  seed: ${seed}

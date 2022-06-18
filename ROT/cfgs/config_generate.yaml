@@ -1,0 +1,40 @@
+defaults:
+  - _self_
+  - agent: drqv2
+  - suite: dmc
+  - override hydra/launcher: submitit_local
+
+# replay buffer
+replay_buffer_size: 1000000
+replay_buffer_num_workers: 4
+nstep: 3
+batch_size: 256
+# misc
+seed: 2
+device: cuda
+save_video: true
+save_train_video: false
+use_tb: true
+# experiment
+obs_type: 'pixels'
+experiment: generate_${suite.name}_${task_name}_seed_${seed}
+bc_weight_type: 'qfilter'
+
+# expert dataset
+num_demos: 10
+
+# Load weights
+weight: '/path/to/dir/weights/${suite.name}_${obs_type}/${task_name}/drqv2.pt'
+
+hydra:
+  run:
+    dir: ./exp_local/${now:%Y.%m.%d}/${now:%H%M%S}_${experiment}
+  sweep:
+    dir: ./exp/${now:%Y.%m.%d}/${now:%H%M}_${experiment}
+    subdir: ${hydra.job.num}
+  launcher:
+    tasks_per_node: 1
+    nodes: 1
+    submitit_folder: ./exp/${now:%Y.%m.%d}/${now:%H%M%S}_${experiment}/.slurm
+
+

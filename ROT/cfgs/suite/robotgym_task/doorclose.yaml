@@ -1,0 +1,12 @@
+defaults:
+  - params
+  - _self_
+
+task_name: RobotDoorClose-v1
+num_train_frames_bc: 1000
+pitch: 0
+roll: 180
+x_limit : [2.3, 3.3]
+y_limit : [-0.9, 3.29]
+z_limit: [1.6, 2.65]
+keep_gripper_closed: true

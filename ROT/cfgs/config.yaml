@@ -1,0 +1,49 @@
+defaults:
+  - _self_
+  - agent: potil
+  - suite: dmc
+  - override hydra/launcher: submitit_local
+
+# Root Dir
+root_dir: '/mnt/robotlab/vaibhav/Projects/copied/Regularized-OT-on-Robot'
+
+# replay buffer
+replay_buffer_size: 150000
+replay_buffer_num_workers: 2
+nstep: 3
+batch_size: 256 # 128
+# misc
+seed: 2
+device: cuda
+save_video: true
+save_train_video: false
+use_tb: true
+
+# experiment
+obs_type: 'pixels' # pixels, features
+experiment: bc_${suite.name}_${obs_type}_${task_name}_seed_${seed}
+
+# expert dataset
+num_demos: 10 #50(openaigym), 10(dmc), 1(metaworld), 1(particle), 1(robotgym)
+expert_dataset: '${root_dir}/ROT/expert_demos/${suite.name}/${task_name}/expert_demos.pkl'
+
+# Load weights
+load_bc: true
+
+# Weights
+bc_weight: '${root_dir}/ROT/weights/${suite.name}_${obs_type}/${task_name}/bc_1.pt'
+
+# Train with BC loss
+bc_regularize: true
+bc_weight_type: 'qfilter' # linear, qfilter
+
+hydra:
+  run:
+    dir: ./exp_local/${now:%Y.%m.%d}/${now:%H%M%S}_${experiment}
+  sweep:
+    dir: ./exp_local/${now:%Y.%m.%d}/${now:%H%M%S}
+    subdir: ${hydra.job.num}
+  launcher:
+    tasks_per_node: 1
+    nodes: 1
+    submitit_folder: ./exp/${now:%Y.%m.%d}/${now:%H%M%S}_${experiment}/.slurm

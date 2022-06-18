@@ -1,0 +1,12 @@
+defaults:
+  - params
+  - _self_
+
+task_name: RobotHangBag-v1
+num_train_frames_bc: 1000
+pitch: -90
+roll: 180
+x_limit : [2.05, 3.75]
+y_limit : [-1.2, 1.]
+z_limit : [3.65, 4.55]
+keep_gripper_closed: true

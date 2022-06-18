@@ -1,0 +1,12 @@
+defaults:
+  - params
+  - _self_
+
+task_name: RobotBoxOpen-v1
+num_train_frames_bc: 1000
+pitch: 0
+roll: 90
+x_limit : [0.4, 2.6] #1, 3.3]
+y_limit : [1.4, 3.7] #-2.2, 1.]
+z_limit: [0.39, 1.5] #2.5, 3.5]
+keep_gripper_closed: false

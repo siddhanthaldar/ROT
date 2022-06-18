@@ -1,0 +1,18 @@
+# @package agent
+_target_: agent.drqv2.DrQv2Agent
+obs_shape: ??? # to be specified later
+action_shape: ??? # to be specified later
+device: ${device}
+lr: 1e-4
+critic_target_tau: 0.01
+update_every_steps: 2
+use_tb: ${use_tb}
+num_expl_steps: 2000
+hidden_dim: 1024
+feature_dim: 50
+stddev_schedule: ${stddev_schedule_drq} #0.1
+stddev_clip: 0.3
+augment: True
+suite_name: ${suite.name}
+obs_type: ${obs_type}
+bc_weight_type: ${bc_weight_type}

@@ -1,0 +1,7 @@
+defaults:
+  - medium
+  - _self_
+
+task_name: quadruped_run
+replay_buffer_size_drq: 100000
+num_train_frames: 15000000

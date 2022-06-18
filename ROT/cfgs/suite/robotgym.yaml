@@ -1,0 +1,43 @@
+# @package suite
+defaults:
+  - _self_
+  - robotgym_task@_global_: turnknob
+
+suite: robotgym
+
+name: 'robotgym'
+
+# task settings
+frame_stack: 1
+action_repeat: 1
+discount: 0.99
+hidden_dim: 1024
+
+# train settings
+num_train_frames: 6010 
+num_seed_frames: 260
+
+# eval
+eval_every_frames: 2000
+num_eval_episodes: 5
+
+# snapshot
+save_snapshot: true
+
+task_make_fn:
+  _target_: suite.robotgym.make
+  name: ${task_name}
+  height: 84 #224, 84
+  width: 84 #224, 84
+  frame_stack: ${suite.frame_stack}
+  action_repeat: ${suite.action_repeat}
+  seed: ${seed}
+  enable_arm: true
+  enable_gripper: false
+  enable_camera: true
+  x_limit: ${x_limit}
+  y_limit: ${y_limit}
+  z_limit: ${z_limit}
+  pitch: ${pitch}
+  roll: ${roll}
+  keep_gripper_closed: ${keep_gripper_closed}

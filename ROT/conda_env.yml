@@ -1,0 +1,39 @@
+name: rot
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pip=21.1.3
+  - numpy=1.19.2
+  - absl-py=0.13.0
+  - pyparsing=2.4.7
+  - jupyterlab=3.0.14
+  - scikit-image=0.18.1
+  - nvidia::cudatoolkit=11.3
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pip:
+    - protobuf==3.20.1
+    - termcolor==1.1.0
+    # - git+https://github.com/openai/mujoco-py
+    # - git+git://github.com/deepmind/dm_control.git
+    - dm_control
+    - gym
+    # - gym-robotics
+    # - git+https://github.com/rlworkgroup/metaworld.git@master#egg=metaworld
+    - tb-nightly
+    - imageio==2.9.0
+    - imageio-ffmpeg==0.4.4
+    - hydra-core==1.1.0
+    - hydra-submitit-launcher==1.1.5
+    - pandas==1.3.0
+    - ipdb==0.13.9
+    - yapf==0.31.0
+    - sklearn==0.0
+    - matplotlib==3.4.2
+    - opencv-python==4.5.3.56
+    - POT==0.7.0
+    - pygame==2.1.2
+    - git+https://github.com/xArm-Developer/xArm-Python-SDK.git
+    - pyrealsense2

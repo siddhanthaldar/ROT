@@ -1,0 +1,12 @@
+defaults:
+  - params
+  - _self_
+
+task_name: RobotButtonPress-v1
+num_train_frames_bc: 1000
+pitch: 0
+roll: 180
+x_limit : [0.7, 3.5]
+y_limit : [-1.7, 1.3]
+z_limit: [1.5, 2.7]
+keep_gripper_closed: true
