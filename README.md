@@ -25,23 +25,23 @@ conda activate rot
 - Train BC agent - We provide three different commands for running the code on the DeepMind Control Suite, OpenAI Robotics Suite and the Meta-World Benchmark
   - For pixel-based input
   ```
-  python train.py agent=bc suite=dmc obs_type=pixels suite/dmc_task=walker_run
+  python train.py agent=bc suite=dmc obs_type=pixels suite/dmc_task=walker_run num_demos=10
   ```
   ```
-  python train.py agent=bc suite=openaigym obs_type=pixels suite/openaigym_task=fetch_reach
+  python train.py agent=bc suite=openaigym obs_type=pixels suite/openaigym_task=fetch_reach num_demos=50
   ```
   ```
-  python train.py agent=bc suite=metaworld obs_type=pixels suite/metaworld_task=hammer
+  python train.py agent=bc suite=metaworld obs_type=pixels suite/metaworld_task=hammer num_demos=1
   ```
   - For state-based input
   ```
-  python train.py agent=bc suite=dmc obs_type=features suite/dmc_task=walker_run
+  python train.py agent=bc suite=dmc obs_type=features suite/dmc_task=walker_run num_demos=10
   ```
   ```
-  python train.py agent=bc suite=openaigym obs_type=features suite/openaigym_task=fetch_reach
+  python train.py agent=bc suite=openaigym obs_type=features suite/openaigym_task=fetch_reach num_demos=50
   ```
   ```
-  python train.py agent=bc suite=metaworld obs_type=features suite/metaworld_task=hammer
+  python train.py agent=bc suite=metaworld obs_type=features suite/metaworld_task=hammer num_demos=1
   ```
 
 - Train ROT - We provide three different commands for running the code on the DeepMind Control Suite, OpenAI Robotics Suite and the Meta-World Benchmark
