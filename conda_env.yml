@@ -1,4 +1,4 @@
-name: rot
+name: rot_test
 channels:
   - defaults
 dependencies:
@@ -16,7 +16,7 @@ dependencies:
   - pip:
     - protobuf==3.20.1
     - termcolor==1.1.0
-    - git+https://github.com/openai/mujoco-py
+    # - git+https://github.com/openai/mujoco-py
     # - git+git://github.com/deepmind/dm_control.git
     - dm_control
     - gym

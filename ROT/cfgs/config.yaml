@@ -5,7 +5,7 @@ defaults:
   - override hydra/launcher: submitit_local
 
 # Root Dir
-root_dir: '/mnt/robotlab/vaibhav/Projects/copied/Regularized-OT-on-Robot'
+root_dir: '/home/siddhant/github/ROT'
 
 # replay buffer
 replay_buffer_size: 150000
@@ -28,13 +28,13 @@ num_demos: 10 #50(openaigym), 10(dmc), 1(metaworld), 1(particle), 1(robotgym)
 expert_dataset: '${root_dir}/ROT/expert_demos/${suite.name}/${task_name}/expert_demos.pkl'
 
 # Load weights
-load_bc: true
+load_bc: false
 
 # Weights
-bc_weight: '${root_dir}/ROT/weights/${suite.name}_${obs_type}/${task_name}/bc_1.pt'
+bc_weight: '${root_dir}/ROT/weights/${suite.name}_${obs_type}/${task_name}/bc.pt'
 
 # Train with BC loss
-bc_regularize: true
+bc_regularize: false
 bc_weight_type: 'qfilter' # linear, qfilter
 
 hydra:
