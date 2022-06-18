@@ -1,6 +1,6 @@
-# Copy, Act, and Improve: Regularized Optimal Transport for Efficient Imitation
+# Watch and Match: Supercharging Imitation with Regularized Optimal Transport
 
-This is a repository containing the code for the paper "Copy, Act, and Improve: Regularized Optimal Transport for Efficient Imitation".
+This is a repository containing the code for the paper "Watch and Match: Supercharging Imitation with Regularized Optimal Transport".
 
 ## Links for expert demonstrations and weights
 - The expert demonstrations are available [here]().
