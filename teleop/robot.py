@@ -16,7 +16,6 @@ class XArm:
 		self.home = home_displacement
 		self.keep_gripper_closed = keep_gripper_closed
 		self.highest_start = highest_start
-		# self.home = tuple(map(sum, zip(self.home, home_displacement)))
 		self.low_range = low_range
 		self.high_range = high_range
 		self.joint_limits = None
@@ -26,8 +25,6 @@ class XArm:
 		# Limits
 		self.x_limit = [0.5, 3.5] if x_limit is None else x_limit
 		self.y_limit = [-1.7, 1.3] if y_limit is None else y_limit
-		# self.z_limit = [2.1, 3.4] # InsertPeg
-		# self.z_limit = [0.2, 1.5] # Reach
 		self.z_limit = [1.4, 3.4] if z_limit is None else z_limit # PressBlock
 
 		# Pitch value - Horizontal or vertical orientation

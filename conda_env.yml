@@ -17,7 +17,7 @@ dependencies:
     - protobuf==3.20.1
     - termcolor==1.1.0
     - git+https://github.com/openai/mujoco-py
-    - git+git://github.com/deepmind/dm_control.git
+    # - git+git://github.com/deepmind/dm_control.git
     - dm_control
     - gym==0.22.0
     # - gym-robotics

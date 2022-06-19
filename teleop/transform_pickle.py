@@ -4,7 +4,7 @@ import cv2
 import os
 from pathlib import Path
 
-root_dir = Path('/mnt/robotlab/vaibhav/Projects/copied/Regularized-OT-on-Robot/teleop/data/EraseBoard/2022_6_14_17_29_random_s_fixed_g')
+root_dir = Path('/path/to/dir/ROT/teleop/data/EraseBoard/2022_6_14_17_29_random_s_fixed_g')
 num_traj = 1
 use_depth = False
 image_height = 84

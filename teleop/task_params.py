@@ -45,18 +45,7 @@ TASK_PARAMS = {
 							'z_limit' : (2.1, 3.4),
 							'episode_len': 30
 						  },
-		'PressBlock' : {
-						 'demo_class': Reach,
-						 'home_displacement': (2.16,-0.047,2.06),
-						 'keep_gripper_closed': True,
-						 'highest_start' : True,
-						 'random_start' : True,
-						 'x_limit' : (0.5, 3.5),
-						 'y_limit' : (-1.7, 1.3),
-						 'z_limit' : (1.4, 2.5),
-						 'episode_len': 30
-					   },
-        'FidgetSpin' : {
+        'TurnKnob' : {
 						 'demo_class': Reach,
 						 'home_displacement': (2.16,-0.047,2.06),
 						 'keep_gripper_closed': True,
@@ -142,17 +131,6 @@ TASK_PARAMS = {
 							'x_limit' : (0.5, 3.5),
 							'y_limit' : (-1.7, 1.3),
 							'z_limit' : (2, 3.4),
-							'episode_len': 30
-						  },
-		'ClothFolding' : {
-							'demo_class': PickandPlace,
-							'home_displacement': (2.2,-0.047,1),
-							'keep_gripper_closed': False,
-							'highest_start' : True,
-							'random_start' : True,
-							'x_limit' : (0.5, 3.5),
-							'y_limit' : (-1.7, 1.7),
-							'z_limit' : (0.49, 1),
 							'episode_len': 30
 						  },
 		'ButtonPress' : {

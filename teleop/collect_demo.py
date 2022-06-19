@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
 	image_width = 640
 	image_height = 480
-	task_name = 'EraseBoard' # Reach, PressBlock, InsertPegEasy/Medium/Hard, FidgetSpin, HangMug/Bag/Hanger, DoorClose, BoxOpen, Pour, CupStacking, ClothFolding, ButtonPress, HangHanger, EraseBoard
+	task_name = 'EraseBoard' # Reach, PressBlock, InsertPegEasy/Medium/Hard, TurnKnob, HangMug/Bag/Hanger, DoorClose, BoxOpen, Pour, CupStacking, ClothFolding, ButtonPress, HangHanger, EraseBoard
 	num_trajectories = 1
 	exp_name = 'random_s_fixed_g'
 	sleep = 0.4
