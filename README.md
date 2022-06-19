@@ -2,9 +2,11 @@
 
 This is a repository containing the code for the paper "Watch and Match: Supercharging Imitation with Regularized Optimal Transport".
 
-## Links for expert demonstrations and weights
-- The expert demonstrations are available [here]().
-- The weight files for the expert (DrQ-v2), behavior cloning (BC) and ROT are available [here]().
+## Link [[here]](https://osf.io/vyu7q/?view_only=040ed766b96847b4aadaba8acd6ab3dd)
+The provided link contains
+- The expert demonstrations.
+- The weight files for the expert (DrQ-v2), behavior cloning (BC) and ROT.
+- Versions of Gym-Robotics and Metaworld libraries.
 
 ## Instructions
 - Install [Mujoco](http://www.mujoco.org/) based on the instructions given [here](https://github.com/facebookresearch/drqv2).
@@ -33,6 +35,9 @@ conda activate rot
   ```
   python train.py agent=bc suite=metaworld obs_type=pixels suite/metaworld_task=hammer num_demos=1
   ```
+  ```
+  python train_robot.py agent=bc suite=robot_gym obs_type=pixels suite/robotgym_task=reach num_demos=1
+  ```
   - For state-based input
   ```
   python train.py agent=bc suite=dmc obs_type=features suite/dmc_task=walker_run num_demos=10
@@ -54,6 +59,9 @@ conda activate rot
   ```
   ```
   python train.py agent=potil suite=metaworld obs_type=pixels suite/metaworld_task=hammer load_bc=true bc_regularize=true num_demos=1
+  ```
+  ```
+  python train_robot.py agent=potil suite=robotgym obs_type=pixels suite/robotgym_task=reach load_bc=true bc_regularize=true num_demos=1
   ```
   - For state-based input
   ```
