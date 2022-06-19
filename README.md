@@ -2,11 +2,16 @@
 
 This is a repository containing the code for the paper "Watch and Match: Supercharging Imitation with Regularized Optimal Transport".
 
-## Link [[here]](https://osf.io/vyu7q/?view_only=040ed766b96847b4aadaba8acd6ab3dd)
-The provided link contains
-- The expert demonstrations.
-- The weight files for the expert (DrQ-v2), behavior cloning (BC) and ROT.
-- Versions of Gym-Robotics and Metaworld libraries.
+
+## Download expert demonstrations, weights and environment libraries [[link]](https://osf.io/vyu7q/?view_only=040ed766b96847b4aadaba8acd6ab3dd)
+The link contains the following:
+- The expert demonstrations for all tasks in the paper.
+- The weight files for the expert (DrQ-v2) and behavior cloning (BC).
+- The supporting libraries for environments (Gym-Robotics, metaworld) in the paper.
+- Extract the files provided in the link
+  - set the `path/to/dir` portion of the `root_dir` path variable in `cfgs/config.yaml` to the path of the `ROT` repository.
+  - place the `expert_demos` and `weights` folders in `${root_dir}/ROT`.
+
 
 ## Instructions
 - Install [Mujoco](http://www.mujoco.org/) based on the instructions given [here](https://github.com/facebookresearch/drqv2).
@@ -16,13 +21,23 @@ sudo apt update
 sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
 ```
 - Install dependencies
-```
-conda env create -f conda_env.yml
-conda activate rot
-```
-- Set the `path\to\dir` portion of the `expert_dataset` path variable in `cfgs/config.yaml` to the path of the `expert_demos` folder downloaded above. 
-
-- Set the `path\to\dir` portion of the `bc_weight` path variable in `cfgs/config.yaml` to the path of the `weights` folder downloaded above.
+  - Set up Environment
+  ```
+  conda env create -f conda_env.yml
+  conda activate rot
+  ```
+  - Install Gym-Robotics
+  ```
+  pip install -e /path/to/dir/Gym-Robotics
+  ```
+  - Install Meta-World
+  ```
+  pip install -e /path/to/dir/metaworld
+  ```
+  - Install particle environment (for experiment in Fig. 2 in the paper)
+  ```
+  pip install -e /path/to/dir/gym-envs
+  ```
 
 - Train BC agent - We provide three different commands for running the code on the DeepMind Control Suite, OpenAI Robotics Suite and the Meta-World Benchmark
   - For pixel-based input
