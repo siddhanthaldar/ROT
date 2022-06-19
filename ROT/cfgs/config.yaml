@@ -5,7 +5,7 @@ defaults:
   - override hydra/launcher: submitit_local
 
 # Root Dir
-root_dir: '/home/siddhant/github/ROT'
+root_dir: '/path/to/dir/ROT'
 
 # replay buffer
 replay_buffer_size: 150000

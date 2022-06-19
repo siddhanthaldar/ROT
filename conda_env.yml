@@ -1,4 +1,4 @@
-name: rot_test
+name: rot
 channels:
   - defaults
 dependencies:

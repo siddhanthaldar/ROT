@@ -5,7 +5,7 @@ defaults:
   - override hydra/launcher: submitit_local
 
 # Root Dir
-root_dir: '/mnt/robotlab/vaibhav/Projects/copied/Regularized-OT-on-Robot'
+root_dir: '/path/to/dir/ROT'
 
 nstep: 3
 # misc

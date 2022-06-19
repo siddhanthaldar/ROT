@@ -52,44 +52,6 @@ class ParticleEnv(gym.Env):
 				for c in range(n_channels):
 					self.observation[h,w,c] = 1
 
-		# if block is None:
-		# 	block_hmin, block_hmax = int(height/3), int(2/3*height)
-		# 	block_wmin, block_wmax = int(width/3), int(2/3*width)
-		# else:
-		# 	block_hmin, block_hmax = int(block[0]), int(block[1])
-		# 	block_wmin, block_wmax = int(block[2]), int(block[3])
-		# for h in range(height):
-		# 	for w in range(width):
-		# 		if h>=block_hmin and h<=block_hmax and w>=block_wmin and w<=block_wmax:
-		# 			for c in range(n_channels):
-		# 				self.observation[h,w,c] = 2
-		# 		elif h>=self.goal[0] and h<=self.goal[1] and w>=self.goal[2] and w<=self.goal[3]:
-		# 			for c in range(n_channels):
-		# 				self.observation[h,w,c] = 1
-		# 		else:
-		# 			for c in range(n_channels):
-		# 				self.observation[h,w,c] = 0
-		
-
-		# # Save image
-		# cv2.imwrite("environment.jpg", (self.observation * 127).astype(np.uint8))
-		# reward_map = np.zeros(self.observation.shape)
-		# for h in range(height):
-		# 	for w in range(width):
-		# 		if h>=block_hmin and h<=block_hmax and w>=block_wmin and w<=block_wmax:
-		# 			for c in range(n_channels):
-		# 				reward_map[h,w,c] = 0 #-1000
-		# 		elif h>=self.goal[0] and h<=self.goal[1] and w>=self.goal[2] and w<=self.goal[3]:
-		# 			for c in range(n_channels):
-		# 				reward_map[h,w,c] = 20 #1000
-		# 		else:
-		# 			for c in range(n_channels):
-		# 				reward_map[h,w,c] = self.reward_scale/np.sqrt((self.goal_mean[0]-h)**2 + (self.goal_mean[1]-w)**2) #-np.sqrt((self.goal_mean[0]-h)**2 + (self.goal_mean[1]-w)**2) / 3.60
-		# 				# print(reward_map[h,w,c])	
-		# min, max = np.min(reward_map), np.max(reward_map)
-		# reward_map = (reward_map - min)/(max - min)*255
-		# cv2.imwrite("reward.jpg", (reward_map).astype(np.uint8))
-
 		self.action_space = spaces.Box(low = np.array([-1,-1],dtype=np.float32), 
 									   high = np.array([1,1],dtype=np.float32),
 									   dtype = np.float32)
@@ -114,7 +76,6 @@ class ParticleEnv(gym.Env):
 				reward = 0
 			else:
 				reward = -np.sqrt((self.goal_mean[0]-self.state[0])**2 + (self.goal_mean[1]-self.state[1])**2) / self.reward_scale
-				# reward = self.reward_scale/(1 + np.sqrt((self.goal_mean[0]-self.state[0])**2 + (self.goal_mean[1]-self.state[1])**2))
 		done = False
 		self._step += 1
 		
@@ -128,24 +89,6 @@ class ParticleEnv(gym.Env):
 		self._step = 0
 		return self.state
 
-	# def render(self, mode=''):
-	# 	img = np.ones((self.observation.shape[0], self.observation.shape[1], 3)).astype(np.uint8) * 255
-
-	# 	# Identify blocked region
-	# 	blocked = np.where(self.observation == 2)
-	# 	img[blocked] = np.array([0,0,0])
-
-	# 	# Identify goal region
-	# 	img[self.goal[0]:self.goal[1]+1, self.goal[2]:self.goal[3]+1] = [255,0,0]
-	# 	# blocked = np.where(self.observation>=self.goal[0] and self.observation<=self.goal[1] or self.observation>=self.goal[2] and self.observation<=self.goal[2])
-	# 	# img[blocked] = 64
-
-
-	# 	# Mark state
-	# 	img[max(0, self.state[0]-5):min(self.height-1, self.state[0]+5), max(0, self.state[1]-5):min(self.width-1, self.state[1]+5)] = [0,0,255]
-
-	# 	cv2.imshow("Render", img)
-	# 	cv2.waitKey(5)
 
 	def render(self, mode='', width=None, height=None):
 		img = np.ones(self.observation.shape).astype(np.uint8) * 255
