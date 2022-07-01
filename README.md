@@ -1,6 +1,6 @@
 # Watch and Match: Supercharging Imitation with Regularized Optimal Transport
 
-This is a repository containing the code for the paper "Watch and Match: Supercharging Imitation with Regularized Optimal Transport".
+This is a repository containing the code for the paper ["Watch and Match: Supercharging Imitation with Regularized Optimal Transport"](https://arxiv.org/abs/2206.15469).
 
 ![github_intro](https://user-images.githubusercontent.com/25313941/175857612-3cde39eb-b4ea-4231-bded-76157bb5754b.png)
 
