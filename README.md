@@ -4,7 +4,7 @@ This is a repository containing the code for the paper ["Watch and Match: Superc
 
 ![github_intro](https://user-images.githubusercontent.com/25313941/175857612-3cde39eb-b4ea-4231-bded-76157bb5754b.png)
 
-## Download expert demonstrations, weights and environment libraries [[link]](https://osf.io/vyu7q/?view_only=040ed766b96847b4aadaba8acd6ab3dd)
+## Download expert demonstrations, weights and environment libraries [[link]](https://osf.io/4w69f/?view_only=e29b9dc9ea474d038d533c2245754f0c)
 The link contains the following:
 - The expert demonstrations for all tasks in the paper.
 - The weight files for the expert (DrQ-v2) and behavior cloning (BC).
