@@ -184,7 +184,7 @@ class DACAgent:
 		with torch.no_grad():
 			stddev = utils.schedule(self.stddev_schedule, step)
 
-			dist = self.actor(obs, stddev)
+			dist = self.actor(next_obs, stddev)
 			next_action = dist.sample(clip=self.stddev_clip)
 			target_Q1, target_Q2 = self.critic_target(next_obs, next_action)
 			target_V = torch.min(target_Q1, target_Q2)
