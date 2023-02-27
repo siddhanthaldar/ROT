@@ -93,3 +93,13 @@ sudo apt install libosmesa6-dev libgl1-mesa-glx libglfw3
 ```
 tensorboard --logdir exp_local
 ```
+
+## Bibtex
+```
+@article{haldar2022watch,
+         title={Watch and Match: Supercharging Imitation with Regularized Optimal Transport},
+         author={Haldar, Siddhant and Mathur, Vaibhav and Yarats, Denis and Pinto, Lerrel},
+         journal={CoRL},
+         year={2022}
+        } 
+```
